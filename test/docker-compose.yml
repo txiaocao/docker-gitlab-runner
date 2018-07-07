@@ -1,0 +1,8 @@
+version: "2"
+services:
+  gitlab-runner:
+    image: gitlab/gitlab-runner
+    volumes:
+      - ./volume/etc/gitlab-runner:/etc/gitlab-runner
+      - /run/docker.sock:/var/run/docker.sock 
+      - /etc/hosts:/etc/hosts

@@ -1,0 +1,5 @@
+registry=http://npm-registry.kemao-dev.com
+//npm-registry.kemao-dev.com/:_password="a2VtYW8="
+//npm-registry.kemao-dev.com/:username=kemao
+//npm-registry.kemao-dev.com/:email=kemao@mtime.com
+//npm-registry.kemao-dev.com/:always-auth=false

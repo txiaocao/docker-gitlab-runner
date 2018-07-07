@@ -1,0 +1,32 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "1"
+  url = "https://gitlab.kemao-inc.com/"
+  token = "99a333317b895dd6454a67abe4f0ee"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "docker-registry.kemao-inc.com/kemao-dev/nodejs:v1"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache", "/var/run/docker.sock:/var/run/docker.sock"]
+    extra_hosts = ["gitlab.kemao-inc.com:192.168.31.101", "npm-registry.kemao-inc.com:192.168.31.101", "robot.kemao-inc.com:192.168.31.101","lark.kemao-inc.com:192.168.31.101"]
+    shm_size = 0
+  [runners.cache]
+
+[[runners]]
+  name = "48ae14b18c54"
+  url = "https://gitlab.kemao-inc.com/"
+  token = "48487734d09a777021a676fc300c0c"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "docker-registry.kemao-inc.com/kemao-dev/nodejs"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache", "/var/run/docker.sock:/var/run/docker.sock"]
+    extra_hosts = ["gitlab.kemao-inc.com:192.168.31.101", "npm-registry.kemao-inc.com:192.168.31.101", "robot.kemao-inc.com:192.168.31.101","lark.kemao-inc.com:192.168.31.101"]
+    shm_size = 0
+  [runners.cache]

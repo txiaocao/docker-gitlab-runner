@@ -1,0 +1,8 @@
+version: "2"
+services:
+  kemao-dev/gitlab-runner:
+    build: "./"
+    command: "gitlab-ci-multi-runner run"
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /etc/hosts:/etc/hosts

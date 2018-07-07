@@ -1,0 +1,3 @@
+配置phantomjs
+配置私服
+全局安装yarn

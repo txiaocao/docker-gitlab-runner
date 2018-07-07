@@ -1,0 +1,12 @@
+version: "2"
+services:
+  gitlab-runner:
+    build: "."
+    image: "docker-registry.kemao-inc.com/kemao-dev/gitlab-runner:1.0.0"
+    dns:
+      - 192.168.31.101
+    extra_hosts:
+      - "npm-registry.kemao-inc.com:192.168.31.101"
+      - "gitlab.kemao-inc.com:192.168.31.101"
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
