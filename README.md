@@ -80,3 +80,5 @@ chmod 0600 /root/.ssh/id_rsa && \
 ssh-add /root/.ssh/id_rsa > /dev/null
 # RUN ssh git@github.com -o StrictHostKeyChecking=no>~/git.txt
 
+
+docker-compose run gitlab-runner register

@@ -1,0 +1,22 @@
+version: "2"
+services:
+  gitlab-runner:
+    image: "gitlab/gitlab-runner"
+    environment:
+      - SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./volume/etc/gitlab-runner:/etc/gitlab-runner
+      # - /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem:/etc/ssl/certs/ca-certificates.crt
+      # - /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem:/etc/pki/tls/certs/ca-bundle.crt
+      # - /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem:/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+      # - ./volume/etc/hosts:/etc/hosts
+      # - ./volume/etc/ssh/ssh_config:/etc/ssh/ssh_config
+      # - ./volume/etc/gitlab-runner:/etc/gitlab-runner
+      # - ./volume/home/gitlab-runner:/home/gitlab-runner
+      # - ./volume/home/nodejs:/home/nodejs
+      # - ./volume/root:/root
+      # - ./volume/root/.gitconfig:/etc/gitconfig
+      # - ./volume/root/.ssh:/home/gitlab-runner/.ssh
+    # command: node -v && npm -v && yarn -v
+    # command: /usr/bin/dumb-init register 

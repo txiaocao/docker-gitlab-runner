@@ -1,0 +1,16 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "f24ba1d164be"
+  url = "https://gitlab.kemao-inc.com/"
+  token = "60c1da843b155040204276040e26fc"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "node:alpine"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+  [runners.cache]
