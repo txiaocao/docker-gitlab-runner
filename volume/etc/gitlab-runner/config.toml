@@ -1,16 +1,24 @@
 concurrent = 1
-check_interval = 0
+check_interval = 10
 
 [[runners]]
-  name = "f24ba1d164be"
-  url = "https://gitlab.kemao-inc.com/"
-  token = "60c1da843b155040204276040e26fc"
+  name = "mac-pro"
+  url = "http://gitlab-iflab.jd.com/"
+  token = "c6ca4eaaaeb87ff5e88c0907d3ba8d"
   executor = "docker"
   [runners.docker]
     tls_verify = false
-    image = "node:alpine"
-    privileged = false
-    disable_cache = false
-    volumes = ["/cache"]
+    image = "docker-registry.kemao.com/tmaier/docker-compose"
+    privileged = true
+    disable_cache = true
     shm_size = 0
+    volumes = [
+      "/cache",
+      "/var/run/docker.sock:/var/run/docker.sock"
+    ]
+    extra_hosts = [
+      "gitlab.kemao.com:10.13.22.142",
+      "docker-registry.kemao.com:10.13.22.142",
+      "npm-registry.kemao.com:10.13.22.142"
+    ]
   [runners.cache]
